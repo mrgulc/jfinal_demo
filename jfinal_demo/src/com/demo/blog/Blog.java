@@ -4,6 +4,7 @@ import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
 
 //teststeesadfsad
+//branch2
 /**
  * Blog model.
 
