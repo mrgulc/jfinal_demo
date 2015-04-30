@@ -3,6 +3,7 @@ package com.demo.common;
 import com.demo.blog.Blog;
 import com.demo.blog.BlogController;
 import com.demo.index.IndexController;
+import com.demo.mycontroller.HelloContorller;
 import com.demo.mycontroller.MyController;
 import com.demo.mycontroller.MyHandle;
 import com.demo.mycontroller.MyInterceptor;
@@ -39,6 +40,7 @@ public class DemoConfig extends JFinalConfig {
 		//me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
 		
 		me.add("glcview",MyController.class);
+		me.add("/",HelloContorller.class);
 	}
 	
 	/**

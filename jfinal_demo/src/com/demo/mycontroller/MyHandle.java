@@ -11,11 +11,11 @@ public class MyHandle extends Handler{
 	public void handle(String target, HttpServletRequest request,
 			HttpServletResponse response, boolean[] isHandled) {
 		
-		String uri = request.getRequestURI();
-		if("/".equals(uri)){
-			target = "/glcview";
-		}
-		
+//		String uri = request.getRequestURI();
+//		if("/".equals(uri)){
+//			target = "/glcview";
+//		}
+//		
 		nextHandler.handle(target, request, response, isHandled);
 		
 	}
