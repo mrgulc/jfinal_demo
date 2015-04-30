@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     classpath:/org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+
+	<bean id="human" class="test.Teacher"></bean>
+	
+	<bean id="supervisor" class="test.Supervisor"></bean>
+	
+	<aop:config>
+		<aop:aspect ref="supervisor">
+			<aop:pointcut id="work" 
+			     expression="execution(* *.wantDo(..))"/>
+			<aop:before pointcut-ref="work" method="beforeWork"></aop:before>
+			<aop:after pointcut-ref="work" method="afterWork"></aop:after>
+		</aop:aspect>
+	</aop:config>
+	
+    
+</beans>
