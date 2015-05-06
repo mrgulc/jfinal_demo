@@ -22,10 +22,7 @@ public class MyController extends Controller{
 	}
 	
 	public void list(){
-		String sql = "Select * from blog";
-		List<Blog> blogs = Blog.me.find(sql);
-		setAttr("blogs", blogs);
-		render("list.jsp");
+		setAttr("blogPage", Blog.me.paginate(getParaToInt(0, 1), 10));
 		render("lists.html");
 	}
 }

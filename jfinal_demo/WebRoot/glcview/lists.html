@@ -5,10 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-	<#list blogs as blog>
-		<tr><td>${blog.title}</td><td>${blog.content}</td></tr>
+    <table>
+	<#list blogPage.getList() as x>
+		<tr><td>${ x.title}</td><td>${ x.content}</td></tr>
 	</#list>
 	</table>
+	
+    <#include "/common/_paginate.html" />
+	<@paginate currentPage=blogPage.pageNumber totalPage=blogPage.totalPage actionUrl="/glcview/list/" />
 </body>
 </html>

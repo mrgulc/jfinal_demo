@@ -10,6 +10,7 @@ import com.jfinal.core.Controller;
 @Before(BlogInterceptor.class)
 public class BlogController extends Controller {
 	public void index() {
+		System.out.println("调用index");
 		setAttr("blogPage", Blog.me.paginate(getParaToInt(0, 1), 10));
 		render("blog.html");
 	}
